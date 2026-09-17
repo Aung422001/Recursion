@@ -1,0 +1,186 @@
+{
+  "unit": {
+    "slug": "travel",
+    "title": "Getting Around",
+    "description": "Find the market, the station, and the way home.",
+    "order": 7,
+    "icon": "🚕",
+    "color": "orange"
+  },
+  "concepts": [
+    {
+      "key": "house",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "house" },
+        "my": { "text": "အိမ်", "romanization": "ein" },
+        "th": { "text": "บ้าน", "romanization": "ban" },
+        "ja": { "text": "家", "romanization": "ie" },
+        "ko": { "text": "집", "romanization": "jip" },
+        "vi": { "text": "nhà" },
+        "id": { "text": "rumah" },
+        "ms": { "text": "rumah" },
+        "hi": { "text": "घर", "romanization": "ghar" },
+        "ar": { "text": "بيت", "romanization": "bayt" }
+      }
+    },
+    {
+      "key": "road",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "road" },
+        "my": { "text": "လမ်း", "romanization": "lan" },
+        "th": { "text": "ถนน", "romanization": "thanon" },
+        "ja": { "text": "道", "romanization": "michi" },
+        "ko": { "text": "길", "romanization": "gil" },
+        "vi": { "text": "đường" },
+        "id": { "text": "jalan" },
+        "ms": { "text": "jalan" },
+        "hi": { "text": "सड़क", "romanization": "sadak" },
+        "ar": { "text": "طريق", "romanization": "tareeq" }
+      }
+    },
+    {
+      "key": "market",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "market" },
+        "my": { "text": "ဈေး", "romanization": "zay" },
+        "th": { "text": "ตลาด", "romanization": "talat" },
+        "ja": { "text": "市場", "romanization": "ichiba" },
+        "ko": { "text": "시장", "romanization": "sijang" },
+        "vi": { "text": "chợ" },
+        "id": { "text": "pasar" },
+        "ms": { "text": "pasar" },
+        "hi": { "text": "बाज़ार", "romanization": "baazaar" },
+        "ar": { "text": "سوق", "romanization": "suuq" }
+      }
+    },
+    {
+      "key": "car",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "car" },
+        "my": { "text": "ကား", "romanization": "ka" },
+        "th": { "text": "รถยนต์", "romanization": "rot yon" },
+        "ja": { "text": "車", "romanization": "kuruma" },
+        "ko": { "text": "자동차", "romanization": "jadongcha" },
+        "vi": { "text": "xe hơi" },
+        "id": { "text": "mobil" },
+        "ms": { "text": "kereta" },
+        "hi": { "text": "कार", "romanization": "kaar" },
+        "ar": { "text": "سيارة", "romanization": "sayyaara" }
+      }
+    },
+    {
+      "key": "train",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "train" },
+        "my": { "text": "ရထား", "romanization": "yahta" },
+        "th": { "text": "รถไฟ", "romanization": "rot fai" },
+        "ja": { "text": "電車", "romanization": "densha" },
+        "ko": { "text": "기차", "romanization": "gicha" },
+        "vi": { "text": "tàu hỏa" },
+        "id": { "text": "kereta api" },
+        "ms": { "text": "kereta api" },
+        "hi": { "text": "रेलगाड़ी", "romanization": "relgaadi" },
+        "ar": { "text": "قطار", "romanization": "qitaar" }
+      }
+    },
+    {
+      "key": "airport",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "airport" },
+        "my": { "text": "လေဆိပ်", "romanization": "lay-seik" },
+        "th": { "text": "สนามบิน", "romanization": "sanam bin" },
+        "ja": { "text": "空港", "romanization": "kuukou" },
+        "ko": { "text": "공항", "romanization": "gonghang" },
+        "vi": { "text": "sân bay" },
+        "id": { "text": "bandara" },
+        "ms": { "text": "lapangan terbang" },
+        "hi": { "text": "हवाई अड्डा", "romanization": "hawaai adda" },
+        "ar": { "text": "مطار", "romanization": "mataar" }
+      }
+    },
+    {
+      "key": "city",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "city" },
+        "my": { "text": "မြို့", "romanization": "myo" },
+        "th": { "text": "เมือง", "romanization": "mueang" },
+        "ja": { "text": "町", "romanization": "machi" },
+        "ko": { "text": "도시", "romanization": "dosi" },
+        "vi": { "text": "thành phố" },
+        "id": { "text": "kota" },
+        "ms": { "text": "bandar" },
+        "hi": { "text": "शहर", "romanization": "shahar" },
+        "ar": { "text": "مدينة", "romanization": "madeena" }
+      }
+    },
+    {
+      "key": "hotel",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "hotel" },
+        "my": { "text": "ဟိုတယ်", "romanization": "ho-teh" },
+        "th": { "text": "โรงแรม", "romanization": "rong raem" },
+        "ja": { "text": "ホテル", "romanization": "hoteru" },
+        "ko": { "text": "호텔", "romanization": "hotel" },
+        "vi": { "text": "khách sạn" },
+        "id": { "text": "hotel" },
+        "ms": { "text": "hotel" },
+        "hi": { "text": "होटल", "romanization": "hotal" },
+        "ar": { "text": "فندق", "romanization": "funduq" }
+      }
+    },
+    {
+      "key": "where_is_it",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "where is it" },
+        "my": { "text": "ဘယ်မှာလဲ", "romanization": "beh-hma-leh" },
+        "th": { "text": "อยู่ที่ไหน", "romanization": "yu thi nai" },
+        "ja": { "text": "どこですか", "romanization": "doko desu ka" },
+        "ko": { "text": "어디예요", "romanization": "eodiyeyo" },
+        "vi": { "text": "ở đâu" },
+        "id": { "text": "di mana" },
+        "ms": { "text": "di mana" },
+        "hi": { "text": "कहाँ है", "romanization": "kahaan hai" },
+        "ar": { "text": "أين", "romanization": "ayna" }
+      }
+    },
+    {
+      "key": "far",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "far" },
+        "my": { "text": "ဝေးတယ်", "romanization": "way-de" },
+        "th": { "text": "ไกล", "romanization": "klai" },
+        "ja": { "text": "遠い", "romanization": "tooi" },
+        "ko": { "text": "멀어요", "romanization": "meoreoyo" },
+        "vi": { "text": "xa" },
+        "id": { "text": "jauh" },
+        "ms": { "text": "jauh" },
+        "hi": { "text": "दूर", "romanization": "door" },
+        "ar": { "text": "بعيد", "romanization": "ba'eed" }
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "travel-1",
+      "title": "Places in Town",
+      "order": 1,
+      "concepts": ["house", "road", "market", "car", "train"]
+    },
+    {
+      "slug": "travel-2",
+      "title": "Asking Directions",
+      "order": 2,
+      "concepts": ["airport", "city", "hotel", "where_is_it", "far"]
+    }
+  ]
+}

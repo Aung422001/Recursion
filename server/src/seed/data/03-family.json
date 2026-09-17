@@ -1,0 +1,186 @@
+{
+  "unit": {
+    "slug": "family",
+    "title": "Family",
+    "description": "The people you will be asked about within five minutes of meeting anyone.",
+    "order": 3,
+    "icon": "👨‍👩‍👧",
+    "color": "rose"
+  },
+  "concepts": [
+    {
+      "key": "mother",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "mother" },
+        "my": { "text": "အမေ", "romanization": "amay" },
+        "th": { "text": "แม่", "romanization": "mae" },
+        "ja": { "text": "お母さん", "romanization": "okaasan" },
+        "ko": { "text": "어머니", "romanization": "eomeoni" },
+        "vi": { "text": "mẹ" },
+        "id": { "text": "ibu" },
+        "ms": { "text": "ibu" },
+        "hi": { "text": "माँ", "romanization": "maa" },
+        "ar": { "text": "أم", "romanization": "umm" }
+      }
+    },
+    {
+      "key": "father",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "father" },
+        "my": { "text": "အဖေ", "romanization": "aphay" },
+        "th": { "text": "พ่อ", "romanization": "pho" },
+        "ja": { "text": "お父さん", "romanization": "otousan" },
+        "ko": { "text": "아버지", "romanization": "abeoji" },
+        "vi": { "text": "bố" },
+        "id": { "text": "ayah" },
+        "ms": { "text": "bapa" },
+        "hi": { "text": "पिता", "romanization": "pita" },
+        "ar": { "text": "أب", "romanization": "ab" }
+      }
+    },
+    {
+      "key": "older_brother",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "older brother" },
+        "my": { "text": "အစ်ကို", "romanization": "ako" },
+        "th": { "text": "พี่ชาย", "romanization": "phi chai" },
+        "ja": { "text": "兄", "romanization": "ani" },
+        "ko": { "text": "형", "romanization": "hyeong" },
+        "vi": { "text": "anh trai" },
+        "id": { "text": "kakak laki-laki" },
+        "ms": { "text": "abang" },
+        "hi": { "text": "बड़ा भाई", "romanization": "bada bhai" },
+        "ar": { "text": "أخ أكبر", "romanization": "akh akbar" }
+      }
+    },
+    {
+      "key": "older_sister",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "older sister" },
+        "my": { "text": "အစ်မ", "romanization": "ama" },
+        "th": { "text": "พี่สาว", "romanization": "phi sao" },
+        "ja": { "text": "姉", "romanization": "ane" },
+        "ko": { "text": "누나", "romanization": "nuna" },
+        "vi": { "text": "chị gái" },
+        "id": { "text": "kakak perempuan" },
+        "ms": { "text": "kakak" },
+        "hi": { "text": "बड़ी बहन", "romanization": "badi bahan" },
+        "ar": { "text": "أخت كبرى", "romanization": "ukht kubra" }
+      }
+    },
+    {
+      "key": "child",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "child" },
+        "my": { "text": "ကလေး", "romanization": "kalay" },
+        "th": { "text": "เด็ก", "romanization": "dek" },
+        "ja": { "text": "子供", "romanization": "kodomo" },
+        "ko": { "text": "아이", "romanization": "ai" },
+        "vi": { "text": "trẻ em" },
+        "id": { "text": "anak" },
+        "ms": { "text": "anak" },
+        "hi": { "text": "बच्चा", "romanization": "bachcha" },
+        "ar": { "text": "طفل", "romanization": "tifl" }
+      }
+    },
+    {
+      "key": "family",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "family" },
+        "my": { "text": "မိသားစု", "romanization": "mithasu" },
+        "th": { "text": "ครอบครัว", "romanization": "khrop khrua" },
+        "ja": { "text": "家族", "romanization": "kazoku" },
+        "ko": { "text": "가족", "romanization": "gajok" },
+        "vi": { "text": "gia đình" },
+        "id": { "text": "keluarga" },
+        "ms": { "text": "keluarga" },
+        "hi": { "text": "परिवार", "romanization": "parivaar" },
+        "ar": { "text": "عائلة", "romanization": "aa'ila" }
+      }
+    },
+    {
+      "key": "friend",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "friend" },
+        "my": { "text": "သူငယ်ချင်း", "romanization": "thu-ngeh-chin" },
+        "th": { "text": "เพื่อน", "romanization": "phuean" },
+        "ja": { "text": "友達", "romanization": "tomodachi" },
+        "ko": { "text": "친구", "romanization": "chingu" },
+        "vi": { "text": "bạn" },
+        "id": { "text": "teman" },
+        "ms": { "text": "kawan" },
+        "hi": { "text": "दोस्त", "romanization": "dost" },
+        "ar": { "text": "صديق", "romanization": "sadeeq" }
+      }
+    },
+    {
+      "key": "grandmother",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "grandmother" },
+        "my": { "text": "အဘွား", "romanization": "aphwa" },
+        "th": { "text": "ย่า", "romanization": "ya" },
+        "ja": { "text": "おばあさん", "romanization": "obaasan" },
+        "ko": { "text": "할머니", "romanization": "halmeoni" },
+        "vi": { "text": "bà" },
+        "id": { "text": "nenek" },
+        "ms": { "text": "nenek" },
+        "hi": { "text": "दादी", "romanization": "daadi" },
+        "ar": { "text": "جدة", "romanization": "jadda" }
+      }
+    },
+    {
+      "key": "grandfather",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "grandfather" },
+        "my": { "text": "အဘိုး", "romanization": "apho" },
+        "th": { "text": "ปู่", "romanization": "pu" },
+        "ja": { "text": "おじいさん", "romanization": "ojiisan" },
+        "ko": { "text": "할아버지", "romanization": "harabeoji" },
+        "vi": { "text": "ông" },
+        "id": { "text": "kakek" },
+        "ms": { "text": "datuk" },
+        "hi": { "text": "दादा", "romanization": "daada" },
+        "ar": { "text": "جد", "romanization": "jadd" }
+      }
+    },
+    {
+      "key": "husband",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "husband" },
+        "my": { "text": "ခင်ပွန်း", "romanization": "khinpun" },
+        "th": { "text": "สามี", "romanization": "sami" },
+        "ja": { "text": "夫", "romanization": "otto" },
+        "ko": { "text": "남편", "romanization": "nampyeon" },
+        "vi": { "text": "chồng" },
+        "id": { "text": "suami" },
+        "ms": { "text": "suami" },
+        "hi": { "text": "पति", "romanization": "pati" },
+        "ar": { "text": "زوج", "romanization": "zawj" }
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "family-1",
+      "title": "Parents and Siblings",
+      "order": 1,
+      "concepts": ["mother", "father", "older_brother", "older_sister", "child"]
+    },
+    {
+      "slug": "family-2",
+      "title": "The Wider Family",
+      "order": 2,
+      "concepts": ["family", "friend", "grandmother", "grandfather", "husband"]
+    }
+  ]
+}

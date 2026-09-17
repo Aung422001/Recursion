@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+
+  /* Scripts with stacked marks need extra line height or they collide. */
+  [lang='my'],
+  [lang='th'],
+  [lang='hi'] {
+    line-height: 1.9;
+  }
+
+  /* Arabic runs right-to-left; keep its punctuation on the correct side. */
+  [dir='rtl'] {
+    text-align: start;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-emerald-500 ring-offset-2 ring-offset-slate-50;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900
+      placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "unit": {
+    "slug": "everyday-phrases",
+    "title": "Everyday Phrases",
+    "description": "The sentences that keep a real conversation moving.",
+    "order": 8,
+    "icon": "💬",
+    "color": "teal"
+  },
+  "concepts": [
+    {
+      "key": "i_do_not_understand",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "I do not understand" },
+        "my": { "text": "နားမလည်ဘူး", "romanization": "na-ma-leh-bu" },
+        "th": { "text": "ไม่เข้าใจ", "romanization": "mai khao chai" },
+        "ja": { "text": "わかりません", "romanization": "wakarimasen" },
+        "ko": { "text": "이해 못 해요", "romanization": "ihae mot haeyo" },
+        "vi": { "text": "tôi không hiểu" },
+        "id": { "text": "saya tidak mengerti" },
+        "ms": { "text": "saya tidak faham" },
+        "hi": { "text": "मुझे समझ नहीं आया", "romanization": "mujhe samajh nahin aaya" },
+        "ar": { "text": "لا أفهم", "romanization": "laa afham" }
+      }
+    },
+    {
+      "key": "please_speak_slowly",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "please speak slowly" },
+        "my": { "text": "ဖြေးဖြေးပြောပါ", "romanization": "hpye-hpye pyaw ba" },
+        "th": { "text": "พูดช้าๆ", "romanization": "phut cha cha" },
+        "ja": { "text": "ゆっくり話してください", "romanization": "yukkuri hanashite kudasai" },
+        "ko": { "text": "천천히 말해 주세요", "romanization": "cheoncheonhi malhae juseyo" },
+        "vi": { "text": "nói chậm thôi" },
+        "id": { "text": "tolong bicara pelan-pelan" },
+        "ms": { "text": "tolong cakap perlahan" },
+        "hi": { "text": "धीरे बोलिए", "romanization": "dheere boliye" },
+        "ar": { "text": "تكلم ببطء", "romanization": "takallam bi-butʼ" }
+      }
+    },
+    {
+      "key": "how_much_is_it",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "how much is it" },
+        "my": { "text": "ဘယ်လောက်လဲ", "romanization": "beh-lauk-leh" },
+        "th": { "text": "เท่าไหร่", "romanization": "thao rai" },
+        "ja": { "text": "いくらですか", "romanization": "ikura desu ka" },
+        "ko": { "text": "얼마예요", "romanization": "eolmayeyo" },
+        "vi": { "text": "bao nhiêu tiền" },
+        "id": { "text": "berapa harganya" },
+        "ms": { "text": "berapa harganya" },
+        "hi": { "text": "कितने का है", "romanization": "kitne ka hai" },
+        "ar": { "text": "بكم", "romanization": "bikam" }
+      }
+    },
+    {
+      "key": "help_me",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "help me" },
+        "my": { "text": "ကူညီပါ", "romanization": "ku-nyi-ba" },
+        "th": { "text": "ช่วยด้วย", "romanization": "chuai duai" },
+        "ja": { "text": "助けてください", "romanization": "tasukete kudasai" },
+        "ko": { "text": "도와주세요", "romanization": "dowajuseyo" },
+        "vi": { "text": "giúp tôi với" },
+        "id": { "text": "tolong saya" },
+        "ms": { "text": "tolong saya" },
+        "hi": { "text": "मेरी मदद कीजिए", "romanization": "meri madad kijiye" },
+        "ar": { "text": "ساعدني", "romanization": "saa'idni" }
+      }
+    },
+    {
+      "key": "it_is_okay",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "it is okay" },
+        "my": { "text": "ရပါတယ်", "romanization": "ya-ba-de" },
+        "th": { "text": "ไม่เป็นไร", "romanization": "mai pen rai" },
+        "ja": { "text": "大丈夫です", "romanization": "daijoubu desu" },
+        "ko": { "text": "괜찮아요", "romanization": "gwaenchanayo" },
+        "vi": { "text": "không sao" },
+        "id": { "text": "tidak apa-apa" },
+        "ms": { "text": "tidak apa-apa" },
+        "hi": { "text": "कोई बात नहीं", "romanization": "koi baat nahin" },
+        "ar": { "text": "لا بأس", "romanization": "laa ba's" }
+      }
+    },
+    {
+      "key": "good",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "good" },
+        "my": { "text": "ကောင်းတယ်", "romanization": "kaung-de" },
+        "th": { "text": "ดี", "romanization": "di" },
+        "ja": { "text": "いい", "romanization": "ii" },
+        "ko": { "text": "좋아요", "romanization": "joayo" },
+        "vi": { "text": "tốt" },
+        "id": { "text": "bagus" },
+        "ms": { "text": "bagus" },
+        "hi": { "text": "अच्छा", "romanization": "achchha" },
+        "ar": { "text": "جيد", "romanization": "jayyid" }
+      }
+    },
+    {
+      "key": "not_good",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "not good" },
+        "my": { "text": "မကောင်းဘူး", "romanization": "ma-kaung-bu" },
+        "th": { "text": "ไม่ดี", "romanization": "mai di" },
+        "ja": { "text": "よくない", "romanization": "yokunai" },
+        "ko": { "text": "안 좋아요", "romanization": "an joayo" },
+        "vi": { "text": "không tốt" },
+        "id": { "text": "tidak bagus" },
+        "ms": { "text": "tidak bagus" },
+        "hi": { "text": "अच्छा नहीं", "romanization": "achchha nahin" },
+        "ar": { "text": "غير جيد", "romanization": "ghayr jayyid" }
+      }
+    },
+    {
+      "key": "i_like_it",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "I like it" },
+        "my": { "text": "ကြိုက်တယ်", "romanization": "kyaik-te" },
+        "th": { "text": "ชอบ", "romanization": "chop" },
+        "ja": { "text": "好きです", "romanization": "suki desu" },
+        "ko": { "text": "좋아해요", "romanization": "joahaeyo" },
+        "vi": { "text": "tôi thích" },
+        "id": { "text": "saya suka" },
+        "ms": { "text": "saya suka" },
+        "hi": { "text": "मुझे पसंद है", "romanization": "mujhe pasand hai" },
+        "ar": { "text": "يعجبني", "romanization": "yu'jibuni" }
+      }
+    },
+    {
+      "key": "i_do_not_know",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "I do not know" },
+        "my": { "text": "မသိဘူး", "romanization": "ma-thi-bu" },
+        "th": { "text": "ไม่รู้", "romanization": "mai ru" },
+        "ja": { "text": "知りません", "romanization": "shirimasen" },
+        "ko": { "text": "몰라요", "romanization": "mollayo" },
+        "vi": { "text": "tôi không biết" },
+        "id": { "text": "saya tidak tahu" },
+        "ms": { "text": "saya tidak tahu" },
+        "hi": { "text": "मुझे नहीं पता", "romanization": "mujhe nahin pata" },
+        "ar": { "text": "لا أعرف", "romanization": "laa a'rif" }
+      }
+    },
+    {
+      "key": "a_little",
+      "partOfSpeech": "adverb",
+      "translations": {
+        "en": { "text": "a little" },
+        "my": { "text": "နည်းနည်း", "romanization": "neh-neh" },
+        "th": { "text": "นิดหน่อย", "romanization": "nit noi" },
+        "ja": { "text": "少し", "romanization": "sukoshi" },
+        "ko": { "text": "조금", "romanization": "jogeum" },
+        "vi": { "text": "một chút" },
+        "id": { "text": "sedikit" },
+        "ms": { "text": "sedikit" },
+        "hi": { "text": "थोड़ा", "romanization": "thoda" },
+        "ar": { "text": "قليلا", "romanization": "qaleelan" }
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "everyday-1",
+      "title": "When You Are Stuck",
+      "order": 1,
+      "concepts": [
+        "i_do_not_understand",
+        "please_speak_slowly",
+        "how_much_is_it",
+        "help_me",
+        "it_is_okay"
+      ]
+    },
+    {
+      "slug": "everyday-2",
+      "title": "Opinions",
+      "order": 2,
+      "concepts": ["good", "not_good", "i_like_it", "i_do_not_know", "a_little"]
+    }
+  ]
+}

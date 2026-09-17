@@ -1,0 +1,186 @@
+{
+  "unit": {
+    "slug": "numbers",
+    "title": "Numbers",
+    "description": "Counting from one to ten — enough to shop and tell the time.",
+    "order": 2,
+    "icon": "🔢",
+    "color": "sky"
+  },
+  "concepts": [
+    {
+      "key": "one",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "one" },
+        "my": { "text": "တစ်", "romanization": "tit" },
+        "th": { "text": "หนึ่ง", "romanization": "nueng" },
+        "ja": { "text": "一", "romanization": "ichi" },
+        "ko": { "text": "하나", "romanization": "hana" },
+        "vi": { "text": "một" },
+        "id": { "text": "satu" },
+        "ms": { "text": "satu" },
+        "hi": { "text": "एक", "romanization": "ek" },
+        "ar": { "text": "واحد", "romanization": "waahid" }
+      }
+    },
+    {
+      "key": "two",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "two" },
+        "my": { "text": "နှစ်", "romanization": "hnit" },
+        "th": { "text": "สอง", "romanization": "song" },
+        "ja": { "text": "二", "romanization": "ni" },
+        "ko": { "text": "둘", "romanization": "dul" },
+        "vi": { "text": "hai" },
+        "id": { "text": "dua" },
+        "ms": { "text": "dua" },
+        "hi": { "text": "दो", "romanization": "do" },
+        "ar": { "text": "اثنان", "romanization": "ithnaan" }
+      }
+    },
+    {
+      "key": "three",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "three" },
+        "my": { "text": "သုံး", "romanization": "thoun" },
+        "th": { "text": "สาม", "romanization": "sam" },
+        "ja": { "text": "三", "romanization": "san" },
+        "ko": { "text": "셋", "romanization": "set" },
+        "vi": { "text": "ba" },
+        "id": { "text": "tiga" },
+        "ms": { "text": "tiga" },
+        "hi": { "text": "तीन", "romanization": "teen" },
+        "ar": { "text": "ثلاثة", "romanization": "thalaatha" }
+      }
+    },
+    {
+      "key": "four",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "four" },
+        "my": { "text": "လေး", "romanization": "lay" },
+        "th": { "text": "สี่", "romanization": "si" },
+        "ja": { "text": "四", "romanization": "yon" },
+        "ko": { "text": "넷", "romanization": "net" },
+        "vi": { "text": "bốn" },
+        "id": { "text": "empat" },
+        "ms": { "text": "empat" },
+        "hi": { "text": "चार", "romanization": "chaar" },
+        "ar": { "text": "أربعة", "romanization": "arba'a" }
+      }
+    },
+    {
+      "key": "five",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "five" },
+        "my": { "text": "ငါး", "romanization": "nga" },
+        "th": { "text": "ห้า", "romanization": "ha" },
+        "ja": { "text": "五", "romanization": "go" },
+        "ko": { "text": "다섯", "romanization": "daseot" },
+        "vi": { "text": "năm" },
+        "id": { "text": "lima" },
+        "ms": { "text": "lima" },
+        "hi": { "text": "पाँच", "romanization": "paanch" },
+        "ar": { "text": "خمسة", "romanization": "khamsa" }
+      }
+    },
+    {
+      "key": "six",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "six" },
+        "my": { "text": "ခြောက်", "romanization": "chauk" },
+        "th": { "text": "หก", "romanization": "hok" },
+        "ja": { "text": "六", "romanization": "roku" },
+        "ko": { "text": "여섯", "romanization": "yeoseot" },
+        "vi": { "text": "sáu" },
+        "id": { "text": "enam" },
+        "ms": { "text": "enam" },
+        "hi": { "text": "छह", "romanization": "chhah" },
+        "ar": { "text": "ستة", "romanization": "sitta" }
+      }
+    },
+    {
+      "key": "seven",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "seven" },
+        "my": { "text": "ခုနစ်", "romanization": "khun-hnit" },
+        "th": { "text": "เจ็ด", "romanization": "chet" },
+        "ja": { "text": "七", "romanization": "nana" },
+        "ko": { "text": "일곱", "romanization": "ilgop" },
+        "vi": { "text": "bảy" },
+        "id": { "text": "tujuh" },
+        "ms": { "text": "tujuh" },
+        "hi": { "text": "सात", "romanization": "saat" },
+        "ar": { "text": "سبعة", "romanization": "sab'a" }
+      }
+    },
+    {
+      "key": "eight",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "eight" },
+        "my": { "text": "ရှစ်", "romanization": "shit" },
+        "th": { "text": "แปด", "romanization": "paet" },
+        "ja": { "text": "八", "romanization": "hachi" },
+        "ko": { "text": "여덟", "romanization": "yeodeol" },
+        "vi": { "text": "tám" },
+        "id": { "text": "delapan" },
+        "ms": { "text": "lapan" },
+        "hi": { "text": "आठ", "romanization": "aath" },
+        "ar": { "text": "ثمانية", "romanization": "thamaaniya" }
+      }
+    },
+    {
+      "key": "nine",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "nine" },
+        "my": { "text": "ကိုး", "romanization": "ko" },
+        "th": { "text": "เก้า", "romanization": "kao" },
+        "ja": { "text": "九", "romanization": "kyuu" },
+        "ko": { "text": "아홉", "romanization": "ahop" },
+        "vi": { "text": "chín" },
+        "id": { "text": "sembilan" },
+        "ms": { "text": "sembilan" },
+        "hi": { "text": "नौ", "romanization": "nau" },
+        "ar": { "text": "تسعة", "romanization": "tis'a" }
+      }
+    },
+    {
+      "key": "ten",
+      "partOfSpeech": "number",
+      "translations": {
+        "en": { "text": "ten" },
+        "my": { "text": "ဆယ်", "romanization": "seh" },
+        "th": { "text": "สิบ", "romanization": "sip" },
+        "ja": { "text": "十", "romanization": "juu" },
+        "ko": { "text": "열", "romanization": "yeol" },
+        "vi": { "text": "mười" },
+        "id": { "text": "sepuluh" },
+        "ms": { "text": "sepuluh" },
+        "hi": { "text": "दस", "romanization": "das" },
+        "ar": { "text": "عشرة", "romanization": "ashara" }
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "numbers-1",
+      "title": "One to Five",
+      "order": 1,
+      "concepts": ["one", "two", "three", "four", "five"]
+    },
+    {
+      "slug": "numbers-2",
+      "title": "Six to Ten",
+      "order": 2,
+      "concepts": ["six", "seven", "eight", "nine", "ten"]
+    }
+  ]
+}

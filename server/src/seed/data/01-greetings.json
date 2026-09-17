@@ -1,0 +1,186 @@
+{
+  "unit": {
+    "slug": "greetings",
+    "title": "Greetings",
+    "description": "The first words you will say to anyone.",
+    "order": 1,
+    "icon": "👋",
+    "color": "emerald"
+  },
+  "concepts": [
+    {
+      "key": "hello",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "hello" },
+        "my": { "text": "မင်္ဂလာပါ", "romanization": "mingalaba" },
+        "th": { "text": "สวัสดี", "romanization": "sawatdi" },
+        "ja": { "text": "こんにちは", "romanization": "konnichiwa" },
+        "ko": { "text": "안녕하세요", "romanization": "annyeonghaseyo" },
+        "vi": { "text": "xin chào" },
+        "id": { "text": "halo" },
+        "ms": { "text": "helo" },
+        "hi": { "text": "नमस्ते", "romanization": "namaste" },
+        "ar": { "text": "مرحبا", "romanization": "marhaban" }
+      }
+    },
+    {
+      "key": "thank_you",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "thank you" },
+        "my": { "text": "ကျေးဇူးတင်ပါတယ်", "romanization": "kyeizu tin ba de" },
+        "th": { "text": "ขอบคุณ", "romanization": "khop khun" },
+        "ja": { "text": "ありがとう", "romanization": "arigatou" },
+        "ko": { "text": "감사합니다", "romanization": "gamsahamnida" },
+        "vi": { "text": "cảm ơn" },
+        "id": { "text": "terima kasih" },
+        "ms": { "text": "terima kasih" },
+        "hi": { "text": "धन्यवाद", "romanization": "dhanyavaad" },
+        "ar": { "text": "شكرا", "romanization": "shukran" }
+      }
+    },
+    {
+      "key": "yes",
+      "partOfSpeech": "particle",
+      "translations": {
+        "en": { "text": "yes" },
+        "my": { "text": "ဟုတ်ကဲ့", "romanization": "hoke keh" },
+        "th": { "text": "ใช่", "romanization": "chai" },
+        "ja": { "text": "はい", "romanization": "hai" },
+        "ko": { "text": "네", "romanization": "ne" },
+        "vi": { "text": "vâng" },
+        "id": { "text": "ya" },
+        "ms": { "text": "ya" },
+        "hi": { "text": "हाँ", "romanization": "haan" },
+        "ar": { "text": "نعم", "romanization": "na'am" }
+      }
+    },
+    {
+      "key": "no",
+      "partOfSpeech": "particle",
+      "translations": {
+        "en": { "text": "no" },
+        "my": { "text": "မဟုတ်ဘူး", "romanization": "ma hoke bu" },
+        "th": { "text": "ไม่", "romanization": "mai" },
+        "ja": { "text": "いいえ", "romanization": "iie" },
+        "ko": { "text": "아니요", "romanization": "aniyo" },
+        "vi": { "text": "không" },
+        "id": { "text": "tidak" },
+        "ms": { "text": "tidak" },
+        "hi": { "text": "नहीं", "romanization": "nahin" },
+        "ar": { "text": "لا", "romanization": "laa" }
+      }
+    },
+    {
+      "key": "sorry",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "sorry" },
+        "my": { "text": "တောင်းပန်ပါတယ်", "romanization": "taung pan ba de" },
+        "th": { "text": "ขอโทษ", "romanization": "kho thot" },
+        "ja": { "text": "ごめんなさい", "romanization": "gomen nasai" },
+        "ko": { "text": "죄송합니다", "romanization": "joesonghamnida" },
+        "vi": { "text": "xin lỗi" },
+        "id": { "text": "maaf" },
+        "ms": { "text": "maaf" },
+        "hi": { "text": "माफ़ कीजिए", "romanization": "maaf kijiye" },
+        "ar": { "text": "آسف", "romanization": "aasif" }
+      }
+    },
+    {
+      "key": "goodbye",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "goodbye" },
+        "my": { "text": "သွားတော့မယ်", "romanization": "thwa daw meh" },
+        "th": { "text": "ลาก่อน", "romanization": "la kon" },
+        "ja": { "text": "さようなら", "romanization": "sayounara" },
+        "ko": { "text": "안녕히 가세요", "romanization": "annyeonghi gaseyo" },
+        "vi": { "text": "tạm biệt" },
+        "id": { "text": "selamat tinggal" },
+        "ms": { "text": "selamat tinggal" },
+        "hi": { "text": "अलविदा", "romanization": "alvida" },
+        "ar": { "text": "مع السلامة", "romanization": "ma'a as-salaama" }
+      }
+    },
+    {
+      "key": "how_are_you",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "how are you" },
+        "my": { "text": "နေကောင်းလား", "romanization": "ne kaung la" },
+        "th": { "text": "สบายดีไหม", "romanization": "sabai di mai" },
+        "ja": { "text": "お元気ですか", "romanization": "o-genki desu ka" },
+        "ko": { "text": "어떻게 지내세요", "romanization": "eotteoke jinaeseyo" },
+        "vi": { "text": "bạn khỏe không" },
+        "id": { "text": "apa kabar" },
+        "ms": { "text": "apa khabar" },
+        "hi": { "text": "आप कैसे हैं", "romanization": "aap kaise hain" },
+        "ar": { "text": "كيف حالك", "romanization": "kayfa haaluk" }
+      }
+    },
+    {
+      "key": "please",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "please" },
+        "my": { "text": "ကျေးဇူးပြုပြီး", "romanization": "kyeizu pyu pi" },
+        "th": { "text": "กรุณา", "romanization": "karuna" },
+        "ja": { "text": "お願いします", "romanization": "onegaishimasu" },
+        "ko": { "text": "부탁합니다", "romanization": "butakhamnida" },
+        "vi": { "text": "làm ơn" },
+        "id": { "text": "tolong" },
+        "ms": { "text": "tolong" },
+        "hi": { "text": "कृपया", "romanization": "krpaya" },
+        "ar": { "text": "من فضلك", "romanization": "min fadlik" }
+      }
+    },
+    {
+      "key": "good_morning",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "good morning" },
+        "my": { "text": "မင်္ဂလာနံနက်ခင်းပါ", "romanization": "mingala nanetkhin ba" },
+        "th": { "text": "อรุณสวัสดิ์", "romanization": "arun sawat" },
+        "ja": { "text": "おはようございます", "romanization": "ohayou gozaimasu" },
+        "ko": { "text": "좋은 아침", "romanization": "joeun achim" },
+        "vi": { "text": "chào buổi sáng" },
+        "id": { "text": "selamat pagi" },
+        "ms": { "text": "selamat pagi" },
+        "hi": { "text": "सुप्रभात", "romanization": "suprabhaat" },
+        "ar": { "text": "صباح الخير", "romanization": "sabaah al-khayr" }
+      }
+    },
+    {
+      "key": "welcome",
+      "partOfSpeech": "phrase",
+      "translations": {
+        "en": { "text": "welcome" },
+        "my": { "text": "ကြိုဆိုပါတယ်", "romanization": "kyo so ba de" },
+        "th": { "text": "ยินดีต้อนรับ", "romanization": "yin di ton rap" },
+        "ja": { "text": "ようこそ", "romanization": "youkoso" },
+        "ko": { "text": "환영합니다", "romanization": "hwanyeonghamnida" },
+        "vi": { "text": "chào mừng" },
+        "id": { "text": "selamat datang" },
+        "ms": { "text": "selamat datang" },
+        "hi": { "text": "स्वागत है", "romanization": "swaagat hai" },
+        "ar": { "text": "أهلا وسهلا", "romanization": "ahlan wa sahlan" }
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "greetings-1",
+      "title": "Saying Hello",
+      "order": 1,
+      "concepts": ["hello", "thank_you", "yes", "no", "sorry"]
+    },
+    {
+      "slug": "greetings-2",
+      "title": "Polite Basics",
+      "order": 2,
+      "concepts": ["goodbye", "how_are_you", "please", "good_morning", "welcome"]
+    }
+  ]
+}

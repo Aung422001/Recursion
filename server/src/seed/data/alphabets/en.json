@@ -1,0 +1,33 @@
+{
+  "lang": "en",
+  "scriptName": "Latin alphabet",
+  "note": "26 letters. Five are vowels; the rest are consonants. Letter names differ from the sounds they make.",
+  "letters": [
+    { "type": "vowel", "char": "A a", "name": "ay", "romanization": "a" },
+    { "type": "vowel", "char": "E e", "name": "ee", "romanization": "e" },
+    { "type": "vowel", "char": "I i", "name": "eye", "romanization": "i" },
+    { "type": "vowel", "char": "O o", "name": "oh", "romanization": "o" },
+    { "type": "vowel", "char": "U u", "name": "you", "romanization": "u" },
+    { "type": "consonant", "char": "B b", "name": "bee", "romanization": "b" },
+    { "type": "consonant", "char": "C c", "name": "see", "romanization": "c" },
+    { "type": "consonant", "char": "D d", "name": "dee", "romanization": "d" },
+    { "type": "consonant", "char": "F f", "name": "ef", "romanization": "f" },
+    { "type": "consonant", "char": "G g", "name": "jee", "romanization": "g" },
+    { "type": "consonant", "char": "H h", "name": "aitch", "romanization": "h" },
+    { "type": "consonant", "char": "J j", "name": "jay", "romanization": "j" },
+    { "type": "consonant", "char": "K k", "name": "kay", "romanization": "k" },
+    { "type": "consonant", "char": "L l", "name": "el", "romanization": "l" },
+    { "type": "consonant", "char": "M m", "name": "em", "romanization": "m" },
+    { "type": "consonant", "char": "N n", "name": "en", "romanization": "n" },
+    { "type": "consonant", "char": "P p", "name": "pee", "romanization": "p" },
+    { "type": "consonant", "char": "Q q", "name": "cue", "romanization": "q" },
+    { "type": "consonant", "char": "R r", "name": "ar", "romanization": "r" },
+    { "type": "consonant", "char": "S s", "name": "ess", "romanization": "s" },
+    { "type": "consonant", "char": "T t", "name": "tee", "romanization": "t" },
+    { "type": "consonant", "char": "V v", "name": "vee", "romanization": "v" },
+    { "type": "consonant", "char": "W w", "name": "double-u", "romanization": "w" },
+    { "type": "consonant", "char": "X x", "name": "ex", "romanization": "x" },
+    { "type": "consonant", "char": "Y y", "name": "why", "romanization": "y" },
+    { "type": "consonant", "char": "Z z", "name": "zed", "romanization": "z" }
+  ]
+}

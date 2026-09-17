@@ -1,0 +1,186 @@
+{
+  "unit": {
+    "slug": "time",
+    "title": "Time & Days",
+    "description": "Make a plan, and be on time for it.",
+    "order": 6,
+    "icon": "🕒",
+    "color": "cyan"
+  },
+  "concepts": [
+    {
+      "key": "today",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "today" },
+        "my": { "text": "ဒီနေ့", "romanization": "di-ne" },
+        "th": { "text": "วันนี้", "romanization": "wan ni" },
+        "ja": { "text": "今日", "romanization": "kyou" },
+        "ko": { "text": "오늘", "romanization": "oneul" },
+        "vi": { "text": "hôm nay" },
+        "id": { "text": "hari ini" },
+        "ms": { "text": "hari ini" },
+        "hi": { "text": "आज", "romanization": "aaj" },
+        "ar": { "text": "اليوم", "romanization": "al-yawm" }
+      }
+    },
+    {
+      "key": "tomorrow",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "tomorrow" },
+        "my": { "text": "မနက်ဖြန်", "romanization": "manet-hpyan" },
+        "th": { "text": "พรุ่งนี้", "romanization": "phrung ni" },
+        "ja": { "text": "明日", "romanization": "ashita" },
+        "ko": { "text": "내일", "romanization": "naeil" },
+        "vi": { "text": "ngày mai" },
+        "id": { "text": "besok" },
+        "ms": { "text": "esok" },
+        "hi": { "text": "आने वाला कल", "romanization": "aane waala kal" },
+        "ar": { "text": "غدا", "romanization": "ghadan" }
+      }
+    },
+    {
+      "key": "yesterday",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "yesterday" },
+        "my": { "text": "မနေ့က", "romanization": "mane-ga" },
+        "th": { "text": "เมื่อวาน", "romanization": "muea wan" },
+        "ja": { "text": "昨日", "romanization": "kinou" },
+        "ko": { "text": "어제", "romanization": "eoje" },
+        "vi": { "text": "hôm qua" },
+        "id": { "text": "kemarin" },
+        "ms": { "text": "semalam" },
+        "hi": { "text": "बीता कल", "romanization": "beeta kal" },
+        "ar": { "text": "أمس", "romanization": "ams" }
+      }
+    },
+    {
+      "key": "now",
+      "partOfSpeech": "adverb",
+      "translations": {
+        "en": { "text": "now" },
+        "my": { "text": "အခု", "romanization": "akhu" },
+        "th": { "text": "ตอนนี้", "romanization": "ton ni" },
+        "ja": { "text": "今", "romanization": "ima" },
+        "ko": { "text": "지금", "romanization": "jigeum" },
+        "vi": { "text": "bây giờ" },
+        "id": { "text": "sekarang" },
+        "ms": { "text": "sekarang" },
+        "hi": { "text": "अभी", "romanization": "abhi" },
+        "ar": { "text": "الآن", "romanization": "al-aan" }
+      }
+    },
+    {
+      "key": "time",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "time" },
+        "my": { "text": "အချိန်", "romanization": "achein" },
+        "th": { "text": "เวลา", "romanization": "wela" },
+        "ja": { "text": "時間", "romanization": "jikan" },
+        "ko": { "text": "시간", "romanization": "sigan" },
+        "vi": { "text": "thời gian" },
+        "id": { "text": "waktu" },
+        "ms": { "text": "masa" },
+        "hi": { "text": "समय", "romanization": "samay" },
+        "ar": { "text": "وقت", "romanization": "waqt" }
+      }
+    },
+    {
+      "key": "morning",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "morning" },
+        "my": { "text": "မနက်", "romanization": "manet" },
+        "th": { "text": "เช้า", "romanization": "chao" },
+        "ja": { "text": "朝", "romanization": "asa" },
+        "ko": { "text": "아침", "romanization": "achim" },
+        "vi": { "text": "buổi sáng" },
+        "id": { "text": "pagi" },
+        "ms": { "text": "pagi" },
+        "hi": { "text": "सुबह", "romanization": "subah" },
+        "ar": { "text": "صباح", "romanization": "sabaah" }
+      }
+    },
+    {
+      "key": "evening",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "evening" },
+        "my": { "text": "ညနေ", "romanization": "nya-ne" },
+        "th": { "text": "เย็น", "romanization": "yen" },
+        "ja": { "text": "夕方", "romanization": "yuugata" },
+        "ko": { "text": "저녁", "romanization": "jeonyeok" },
+        "vi": { "text": "buổi tối" },
+        "id": { "text": "sore" },
+        "ms": { "text": "petang" },
+        "hi": { "text": "शाम", "romanization": "shaam" },
+        "ar": { "text": "مساء", "romanization": "masaa'" }
+      }
+    },
+    {
+      "key": "night",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "night" },
+        "my": { "text": "ည", "romanization": "nya" },
+        "th": { "text": "กลางคืน", "romanization": "klang khuen" },
+        "ja": { "text": "夜", "romanization": "yoru" },
+        "ko": { "text": "밤", "romanization": "bam" },
+        "vi": { "text": "đêm" },
+        "id": { "text": "malam" },
+        "ms": { "text": "malam" },
+        "hi": { "text": "रात", "romanization": "raat" },
+        "ar": { "text": "ليل", "romanization": "layl" }
+      }
+    },
+    {
+      "key": "week",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "week" },
+        "my": { "text": "အပတ်", "romanization": "apat" },
+        "th": { "text": "สัปดาห์", "romanization": "sapda" },
+        "ja": { "text": "週", "romanization": "shuu" },
+        "ko": { "text": "주", "romanization": "ju" },
+        "vi": { "text": "tuần" },
+        "id": { "text": "minggu" },
+        "ms": { "text": "minggu" },
+        "hi": { "text": "सप्ताह", "romanization": "saptaah" },
+        "ar": { "text": "أسبوع", "romanization": "usbuu'" }
+      }
+    },
+    {
+      "key": "year",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "year" },
+        "my": { "text": "နှစ်", "romanization": "hnit" },
+        "th": { "text": "ปี", "romanization": "pi" },
+        "ja": { "text": "年", "romanization": "toshi" },
+        "ko": { "text": "년", "romanization": "nyeon" },
+        "vi": { "text": "năm" },
+        "id": { "text": "tahun" },
+        "ms": { "text": "tahun" },
+        "hi": { "text": "साल", "romanization": "saal" },
+        "ar": { "text": "سنة", "romanization": "sana" }
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "time-1",
+      "title": "Today and Tomorrow",
+      "order": 1,
+      "concepts": ["today", "tomorrow", "yesterday", "now", "time"]
+    },
+    {
+      "slug": "time-2",
+      "title": "Parts of the Day",
+      "order": 2,
+      "concepts": ["morning", "evening", "night", "week", "year"]
+    }
+  ]
+}

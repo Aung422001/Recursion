@@ -1,0 +1,186 @@
+{
+  "unit": {
+    "slug": "food",
+    "title": "Food & Drink",
+    "description": "Order a meal and a cup of tea without pointing at the menu.",
+    "order": 4,
+    "icon": "🍜",
+    "color": "amber"
+  },
+  "concepts": [
+    {
+      "key": "rice",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "rice" },
+        "my": { "text": "ထမင်း", "romanization": "htamin" },
+        "th": { "text": "ข้าว", "romanization": "khao" },
+        "ja": { "text": "ご飯", "romanization": "gohan" },
+        "ko": { "text": "밥", "romanization": "bap" },
+        "vi": { "text": "cơm" },
+        "id": { "text": "nasi" },
+        "ms": { "text": "nasi" },
+        "hi": { "text": "चावल", "romanization": "chaawal" },
+        "ar": { "text": "أرز", "romanization": "aruzz" }
+      }
+    },
+    {
+      "key": "water",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "water" },
+        "my": { "text": "ရေ", "romanization": "ye" },
+        "th": { "text": "น้ำ", "romanization": "nam" },
+        "ja": { "text": "水", "romanization": "mizu" },
+        "ko": { "text": "물", "romanization": "mul" },
+        "vi": { "text": "nước" },
+        "id": { "text": "air" },
+        "ms": { "text": "air" },
+        "hi": { "text": "पानी", "romanization": "paani" },
+        "ar": { "text": "ماء", "romanization": "maa'" }
+      }
+    },
+    {
+      "key": "tea",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "tea" },
+        "my": { "text": "လက်ဖက်ရည်", "romanization": "lahpeh-ye" },
+        "th": { "text": "ชา", "romanization": "cha" },
+        "ja": { "text": "お茶", "romanization": "ocha" },
+        "ko": { "text": "차", "romanization": "cha" },
+        "vi": { "text": "trà" },
+        "id": { "text": "teh" },
+        "ms": { "text": "teh" },
+        "hi": { "text": "चाय", "romanization": "chaay" },
+        "ar": { "text": "شاي", "romanization": "shaay" }
+      }
+    },
+    {
+      "key": "coffee",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "coffee" },
+        "my": { "text": "ကော်ဖီ", "romanization": "kaw-hpi" },
+        "th": { "text": "กาแฟ", "romanization": "kafae" },
+        "ja": { "text": "コーヒー", "romanization": "koohii" },
+        "ko": { "text": "커피", "romanization": "keopi" },
+        "vi": { "text": "cà phê" },
+        "id": { "text": "kopi" },
+        "ms": { "text": "kopi" },
+        "hi": { "text": "कॉफ़ी", "romanization": "kofi" },
+        "ar": { "text": "قهوة", "romanization": "qahwa" }
+      }
+    },
+    {
+      "key": "chicken",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "chicken" },
+        "my": { "text": "ကြက်သား", "romanization": "kyet-tha" },
+        "th": { "text": "ไก่", "romanization": "kai" },
+        "ja": { "text": "鶏肉", "romanization": "toriniku" },
+        "ko": { "text": "닭고기", "romanization": "dakgogi" },
+        "vi": { "text": "gà" },
+        "id": { "text": "ayam" },
+        "ms": { "text": "ayam" },
+        "hi": { "text": "मुर्गी", "romanization": "murgi" },
+        "ar": { "text": "دجاج", "romanization": "dajaaj" }
+      }
+    },
+    {
+      "key": "fish",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "fish" },
+        "my": { "text": "ငါး", "romanization": "nga" },
+        "th": { "text": "ปลา", "romanization": "pla" },
+        "ja": { "text": "魚", "romanization": "sakana" },
+        "ko": { "text": "생선", "romanization": "saengseon" },
+        "vi": { "text": "cá" },
+        "id": { "text": "ikan" },
+        "ms": { "text": "ikan" },
+        "hi": { "text": "मछली", "romanization": "machhli" },
+        "ar": { "text": "سمك", "romanization": "samak" }
+      }
+    },
+    {
+      "key": "vegetable",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "vegetable" },
+        "my": { "text": "ဟင်းသီးဟင်းရွက်", "romanization": "hinthi-hinywet" },
+        "th": { "text": "ผัก", "romanization": "phak" },
+        "ja": { "text": "野菜", "romanization": "yasai" },
+        "ko": { "text": "채소", "romanization": "chaeso" },
+        "vi": { "text": "rau" },
+        "id": { "text": "sayur" },
+        "ms": { "text": "sayur" },
+        "hi": { "text": "सब्ज़ी", "romanization": "sabzi" },
+        "ar": { "text": "خضار", "romanization": "khudaar" }
+      }
+    },
+    {
+      "key": "fruit",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "fruit" },
+        "my": { "text": "သစ်သီး", "romanization": "thit-thi" },
+        "th": { "text": "ผลไม้", "romanization": "phonlamai" },
+        "ja": { "text": "果物", "romanization": "kudamono" },
+        "ko": { "text": "과일", "romanization": "gwail" },
+        "vi": { "text": "trái cây" },
+        "id": { "text": "buah" },
+        "ms": { "text": "buah" },
+        "hi": { "text": "फल", "romanization": "phal" },
+        "ar": { "text": "فاكهة", "romanization": "faakiha" }
+      }
+    },
+    {
+      "key": "delicious",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "delicious" },
+        "my": { "text": "စားလို့ကောင်းတယ်", "romanization": "sa-lo-kaung-de" },
+        "th": { "text": "อร่อย", "romanization": "aroi" },
+        "ja": { "text": "おいしい", "romanization": "oishii" },
+        "ko": { "text": "맛있어요", "romanization": "masisseoyo" },
+        "vi": { "text": "ngon" },
+        "id": { "text": "enak" },
+        "ms": { "text": "sedap" },
+        "hi": { "text": "स्वादिष्ट", "romanization": "svaadisht" },
+        "ar": { "text": "لذيذ", "romanization": "ladheedh" }
+      }
+    },
+    {
+      "key": "hungry",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "hungry" },
+        "my": { "text": "ဗိုက်ဆာတယ်", "romanization": "baik-sa-de" },
+        "th": { "text": "หิว", "romanization": "hiu" },
+        "ja": { "text": "お腹がすいた", "romanization": "onaka ga suita" },
+        "ko": { "text": "배고파요", "romanization": "baegopayo" },
+        "vi": { "text": "đói" },
+        "id": { "text": "lapar" },
+        "ms": { "text": "lapar" },
+        "hi": { "text": "भूखा", "romanization": "bhookha" },
+        "ar": { "text": "جائع", "romanization": "jaa'i" }
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "food-1",
+      "title": "At the Tea Shop",
+      "order": 1,
+      "concepts": ["rice", "water", "tea", "coffee", "chicken"]
+    },
+    {
+      "slug": "food-2",
+      "title": "Ordering a Meal",
+      "order": 2,
+      "concepts": ["fish", "vegetable", "fruit", "delicious", "hungry"]
+    }
+  ]
+}

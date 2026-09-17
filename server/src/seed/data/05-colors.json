@@ -1,0 +1,186 @@
+{
+  "unit": {
+    "slug": "colors",
+    "title": "Colors",
+    "description": "Describe what you are looking at, or which shirt you want.",
+    "order": 5,
+    "icon": "🎨",
+    "color": "violet"
+  },
+  "concepts": [
+    {
+      "key": "color",
+      "partOfSpeech": "noun",
+      "translations": {
+        "en": { "text": "color" },
+        "my": { "text": "အရောင်", "romanization": "ayaung" },
+        "th": { "text": "สี", "romanization": "si" },
+        "ja": { "text": "色", "romanization": "iro" },
+        "ko": { "text": "색", "romanization": "saek" },
+        "vi": { "text": "màu" },
+        "id": { "text": "warna" },
+        "ms": { "text": "warna" },
+        "hi": { "text": "रंग", "romanization": "rang" },
+        "ar": { "text": "لون", "romanization": "lawn" }
+      }
+    },
+    {
+      "key": "red",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "red" },
+        "my": { "text": "အနီရောင်", "romanization": "ani-yaung" },
+        "th": { "text": "สีแดง", "romanization": "si daeng" },
+        "ja": { "text": "赤", "romanization": "aka" },
+        "ko": { "text": "빨간색", "romanization": "ppalgansaek" },
+        "vi": { "text": "đỏ" },
+        "id": { "text": "merah" },
+        "ms": { "text": "merah" },
+        "hi": { "text": "लाल", "romanization": "laal" },
+        "ar": { "text": "أحمر", "romanization": "ahmar" }
+      }
+    },
+    {
+      "key": "blue",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "blue" },
+        "my": { "text": "အပြာရောင်", "romanization": "apya-yaung" },
+        "th": { "text": "สีน้ำเงิน", "romanization": "si nam ngoen" },
+        "ja": { "text": "青", "romanization": "ao" },
+        "ko": { "text": "파란색", "romanization": "paransaek" },
+        "vi": { "text": "xanh dương" },
+        "id": { "text": "biru" },
+        "ms": { "text": "biru" },
+        "hi": { "text": "नीला", "romanization": "neela" },
+        "ar": { "text": "أزرق", "romanization": "azraq" }
+      }
+    },
+    {
+      "key": "green",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "green" },
+        "my": { "text": "အစိမ်းရောင်", "romanization": "asein-yaung" },
+        "th": { "text": "สีเขียว", "romanization": "si khiao" },
+        "ja": { "text": "緑", "romanization": "midori" },
+        "ko": { "text": "초록색", "romanization": "choroksaek" },
+        "vi": { "text": "xanh lá" },
+        "id": { "text": "hijau" },
+        "ms": { "text": "hijau" },
+        "hi": { "text": "हरा", "romanization": "hara" },
+        "ar": { "text": "أخضر", "romanization": "akhdar" }
+      }
+    },
+    {
+      "key": "yellow",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "yellow" },
+        "my": { "text": "အဝါရောင်", "romanization": "awa-yaung" },
+        "th": { "text": "สีเหลือง", "romanization": "si lueang" },
+        "ja": { "text": "黄色", "romanization": "kiiro" },
+        "ko": { "text": "노란색", "romanization": "noransaek" },
+        "vi": { "text": "vàng" },
+        "id": { "text": "kuning" },
+        "ms": { "text": "kuning" },
+        "hi": { "text": "पीला", "romanization": "peela" },
+        "ar": { "text": "أصفر", "romanization": "asfar" }
+      }
+    },
+    {
+      "key": "black",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "black" },
+        "my": { "text": "အမည်းရောင်", "romanization": "ameh-yaung" },
+        "th": { "text": "สีดำ", "romanization": "si dam" },
+        "ja": { "text": "黒", "romanization": "kuro" },
+        "ko": { "text": "검은색", "romanization": "geomeunsaek" },
+        "vi": { "text": "đen" },
+        "id": { "text": "hitam" },
+        "ms": { "text": "hitam" },
+        "hi": { "text": "काला", "romanization": "kaala" },
+        "ar": { "text": "أسود", "romanization": "aswad" }
+      }
+    },
+    {
+      "key": "white",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "white" },
+        "my": { "text": "အဖြူရောင်", "romanization": "aphyu-yaung" },
+        "th": { "text": "สีขาว", "romanization": "si khao" },
+        "ja": { "text": "白", "romanization": "shiro" },
+        "ko": { "text": "흰색", "romanization": "huinsaek" },
+        "vi": { "text": "trắng" },
+        "id": { "text": "putih" },
+        "ms": { "text": "putih" },
+        "hi": { "text": "सफ़ेद", "romanization": "safed" },
+        "ar": { "text": "أبيض", "romanization": "abyad" }
+      }
+    },
+    {
+      "key": "orange",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "orange" },
+        "my": { "text": "လိမ္မော်ရောင်", "romanization": "leinmaw-yaung" },
+        "th": { "text": "สีส้ม", "romanization": "si som" },
+        "ja": { "text": "オレンジ", "romanization": "orenji" },
+        "ko": { "text": "주황색", "romanization": "juhwangsaek" },
+        "vi": { "text": "cam" },
+        "id": { "text": "oranye" },
+        "ms": { "text": "oren" },
+        "hi": { "text": "नारंगी", "romanization": "naarangi" },
+        "ar": { "text": "برتقالي", "romanization": "burtuqaali" }
+      }
+    },
+    {
+      "key": "pink",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "pink" },
+        "my": { "text": "ပန်းရောင်", "romanization": "pan-yaung" },
+        "th": { "text": "สีชมพู", "romanization": "si chomphu" },
+        "ja": { "text": "ピンク", "romanization": "pinku" },
+        "ko": { "text": "분홍색", "romanization": "bunhongsaek" },
+        "vi": { "text": "hồng" },
+        "id": { "text": "merah muda" },
+        "ms": { "text": "merah jambu" },
+        "hi": { "text": "गुलाबी", "romanization": "gulaabi" },
+        "ar": { "text": "وردي", "romanization": "wardi" }
+      }
+    },
+    {
+      "key": "purple",
+      "partOfSpeech": "adjective",
+      "translations": {
+        "en": { "text": "purple" },
+        "my": { "text": "ခရမ်းရောင်", "romanization": "kharan-yaung" },
+        "th": { "text": "สีม่วง", "romanization": "si muang" },
+        "ja": { "text": "紫", "romanization": "murasaki" },
+        "ko": { "text": "보라색", "romanization": "borasaek" },
+        "vi": { "text": "tím" },
+        "id": { "text": "ungu" },
+        "ms": { "text": "ungu" },
+        "hi": { "text": "बैंगनी", "romanization": "baingani" },
+        "ar": { "text": "بنفسجي", "romanization": "banafsaji" }
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "colors-1",
+      "title": "Primary Colors",
+      "order": 1,
+      "concepts": ["color", "red", "blue", "green", "yellow"]
+    },
+    {
+      "slug": "colors-2",
+      "title": "More Colors",
+      "order": 2,
+      "concepts": ["black", "white", "orange", "pink", "purple"]
+    }
+  ]
+}

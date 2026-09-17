@@ -1,0 +1,28 @@
+{
+  "name": "recursion",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": ["client", "server", "shared"],
+  "scripts": {
+    "dev": "concurrently -k -n CLIENT,SERVER -c blue,green \"npm run dev -w client\" \"npm run dev -w server\"",
+    "dev:client": "npm run dev -w client",
+    "dev:server": "npm run dev -w server",
+    "seed": "npm run seed -w server",
+    "test": "npm run test -w server && npm run test -w client",
+    "test:server": "npm run test -w server",
+    "test:client": "npm run test -w client",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "build:client": "npm run build -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "eslint": "^9.11.1",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3"
+  },
+  "engines": { "node": ">=20.11" }
+}
