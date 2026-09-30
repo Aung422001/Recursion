@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recursion Case Study</title>
+<meta name="description" content="Case study: Recursion, a spaced-repetition language app teaching 10 languages across 90 course pairs. React, Node/Express, MongoDB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@500&family=Noto+Sans+Devanagari:wght@500&family=Noto+Sans+JP:wght@500&family=Noto+Sans+KR:wght@500&family=Noto+Sans+Myanmar:wght@500&family=Noto+Sans+Thai:wght@500&display=swap">
+<style>
+/* Layout: one reading column with a left rail of section labels on wide screens,
+   broken by full-width "specimen" figures (the scripts, the course matrix, the review ladder). */
+:root {
+  --paper: #f5f7f3;
+  --panel: #ffffff;
+  --ink: #14211c;
+  --muted: #5a6b63;
+  --line: #d9e1db;
+  --accent: #0b7a53;
+  --accent-soft: #dcefe5;
+  --due: #b86a0a;
+  --due-soft: #f8ead3;
+  --off: #eaeee9;
+
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --scripts: "Noto Sans Myanmar", "Noto Sans Thai", "Noto Sans JP", "Noto Sans KR",
+    "Noto Sans Arabic", "Noto Sans Devanagari", "Myanmar Text", "Leelawadee UI",
+    "Yu Gothic", "Malgun Gothic", "Nirmala UI", sans-serif;
+
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: clamp(1.9rem, 4vw, 2.6rem);
+  --step-4: clamp(2.6rem, 7vw, 4.6rem);
+  --col: 44rem;
+  --wide: 68rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1714; --panel: #16211d; --ink: #e4ece7; --muted: #93a69c; --line: #273630;
+    --accent: #3fc48f; --accent-soft: #173a2c; --due: #eaa54a; --due-soft: #3a2c16; --off: #1b2723;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1714; --panel: #16211d; --ink: #e4ece7; --muted: #93a69c; --line: #273630;
+  --accent: #3fc48f; --accent-soft: #173a2c; --due: #eaa54a; --due-soft: #3a2c16; --off: #1b2723;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 var(--step-0)/1.65 var(--body);
+  padding-inline: 16px;
+  padding-block: 0 4rem;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: var(--step-3); font-weight: 800; }
+h3 { font-size: var(--step-1); font-weight: 700; }
+p { margin: 0; }
+code, .mono { font-family: var(--mono); font-size: 0.88em; }
+code { background: var(--off); padding: 0.1em 0.35em; border-radius: 4px; }
+.script { font-family: var(--scripts); }
+
+.wrap { max-width: var(--wide); margin-inline: auto; }
+.eyebrow {
+  font: 500 0.75rem/1 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+/* ---------- top bar ---------- */
+.top {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+  padding-block: 1.25rem; border-bottom: 1px solid var(--line);
+}
+.top nav { display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 0.9rem; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--ink); }
+
+/* ---------- hero ---------- */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 3rem;
+  align-items: center; padding-block: 4rem 3rem;
+}
+.hero h1 { font-size: var(--step-4); font-weight: 800; letter-spacing: -0.03em; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.lede { font-size: var(--step-1); color: var(--muted); margin-top: 1.25rem; max-width: 34rem; }
+.meta {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2rem;
+  margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); max-width: 34rem;
+}
+.meta dt { font: 500 0.72rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+.meta dd { margin: 0.35rem 0 0; font-weight: 500; }
+.cta { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.1rem;
+  border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 0.95rem;
+  border: 1px solid var(--ink); color: var(--ink);
+}
+.btn.primary { background: var(--ink); color: var(--paper); }
+.btn[aria-disabled="true"] { border-style: dashed; color: var(--muted); border-color: var(--line); }
+
+/* the lesson card: the product's own object, used as the hero specimen */
+.specimen {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 22px;
+  padding: 1.75rem; box-shadow: 0 18px 40px -28px rgba(20, 33, 28, 0.45);
+}
+.specimen .row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.bar { height: 10px; border-radius: 99px; background: var(--off); overflow: hidden; margin-block: 1rem 1.75rem; }
+.bar i { display: block; height: 100%; width: 60%; background: var(--accent); border-radius: inherit; transition: width 400ms ease; }
+.word {
+  font-family: var(--scripts); font-weight: 500; font-size: clamp(2.4rem, 6vw, 3.4rem);
+  line-height: 1.5; min-height: 1.6em; display: flex; align-items: center;
+}
+.roman { font-family: var(--mono); color: var(--muted); font-size: 0.9rem; min-height: 1.4em; }
+.options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; margin-top: 1.5rem; }
+.options span {
+  border: 1.5px solid var(--line); border-radius: 14px; padding: 0.7rem 0.9rem; font-weight: 500;
+}
+.options span.right { border-color: var(--accent); background: var(--accent-soft); }
+.chip {
+  font: 500 0.72rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.4rem 0.6rem; border-radius: 99px; background: var(--accent-soft); color: var(--accent);
+}
+
+/* ---------- figures strip ---------- */
+.figures {
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-block: 1px solid var(--line);
+}
+.figures div { padding: 1.5rem 1rem; border-left: 1px solid var(--line); }
+.figures div:first-child { border-left: 0; }
+.figures b {
+  display: block; font: 800 var(--step-3)/1 var(--display); font-variant-numeric: tabular-nums;
+}
+.figures span { font-size: 0.88rem; color: var(--muted); }
+
+/* ---------- sections ---------- */
+section.block {
+  display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 2rem;
+  padding-block: 4.5rem 0;
+}
+section.block > .eyebrow { padding-top: 0.6rem; }
+.prose { max-width: var(--col); display: grid; gap: 1.1rem; }
+.prose p { color: var(--ink); }
+.prose .muted { color: var(--muted); }
+.full { grid-column: 1 / -1; }
+
+/* matrix */
+.matrix-wrap {
+  display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr); gap: 2.5rem; align-items: start;
+  margin-top: 2rem;
+}
+.matrix-scroll { overflow-x: auto; padding-bottom: 0.5rem; }
+.matrix { border-collapse: separate; border-spacing: 4px; font-family: var(--mono); font-size: 0.72rem; }
+.matrix th { color: var(--muted); font-weight: 500; padding: 0 4px; }
+.matrix thead th { height: 2rem; vertical-align: bottom; }
+.matrix tbody th { text-align: right; }
+.matrix button {
+  width: 2.1rem; height: 2.1rem; border: 0; border-radius: 7px; cursor: pointer;
+  background: var(--accent-soft); color: transparent; font: inherit; padding: 0;
+  transition: transform 120ms ease, background 120ms ease;
+}
+.matrix button.mixed { background: color-mix(in srgb, var(--accent) 45%, var(--accent-soft)); }
+.matrix button.latin { background: var(--accent); }
+.matrix button:hover, .matrix button[aria-pressed="true"] { transform: scale(1.12); outline: 2px solid var(--ink); }
+.matrix td.self span {
+  display: block; width: 2.1rem; height: 2.1rem; border-radius: 7px;
+  background: repeating-linear-gradient(135deg, var(--off) 0 4px, transparent 4px 8px);
+}
+.legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; color: var(--muted); margin-top: 1rem; }
+.legend i { display: inline-block; width: 0.9rem; height: 0.9rem; border-radius: 4px; vertical-align: -2px; margin-right: 0.35rem; }
+
+.course-card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 1.5rem;
+  display: grid; gap: 1rem; min-width: 0;
+}
+.course-card h3 { font-size: var(--step-2); }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.75rem; align-items: center; }
+.pair .side { background: var(--off); border-radius: 12px; padding: 0.9rem; min-width: 0; }
+.pair .side .script { font-size: 1.5rem; display: block; line-height: 1.7; overflow-wrap: anywhere; }
+.pair .arrow { color: var(--muted); font-family: var(--mono); }
+.kv { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.4rem 1rem; font-size: 0.92rem; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; }
+
+/* decisions */
+.decisions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin-top: 2rem; border-top: 1px solid var(--line); }
+.decision { padding: 1.5rem 1.5rem 1.75rem 0; border-bottom: 1px solid var(--line); display: grid; gap: 0.5rem; align-content: start; }
+.decision:nth-child(even) { padding-left: 1.5rem; padding-right: 0; border-left: 1px solid var(--line); }
+.decision p { color: var(--muted); font-size: 0.97rem; }
+.decision .tag { font: 500 0.7rem/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+
+/* SM-2 chart */
+.chart-card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 1.5rem; margin-top: 2rem; }
+.chart-scroll { overflow-x: auto; }
+.chart-card svg { display: block; width: 100%; min-width: 34rem; height: auto; }
+.chart-card svg text { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
+.chart-card svg .val { fill: var(--ink); font-weight: 500; }
+.chart-card svg .grid { stroke: var(--line); stroke-width: 1; }
+.chart-card svg .barok { fill: var(--accent); }
+.chart-card svg .barlapse { fill: var(--due); }
+.chart-note { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 1rem; font-size: 0.88rem; color: var(--muted); }
+
+/* architecture */
+.arch { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; position: relative; }
+.tier { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.25rem; display: grid; gap: 0.75rem; align-content: start; min-width: 0; }
+.tier h3 { font-size: 1.1rem; }
+.tier ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; font-size: 0.9rem; color: var(--muted); }
+.tier li code { color: var(--ink); }
+.flow {
+  margin-top: 1rem; background: var(--off); border-radius: 14px; padding: 1.1rem 1.25rem;
+  overflow-x: auto; font: 400 0.85rem/1.7 var(--mono); white-space: pre; color: var(--ink);
+}
+
+/* quality */
+.quality { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 2rem; }
+.quality > div { display: grid; gap: 0.6rem; align-content: start; }
+.quality ul { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: 0.94rem; display: grid; gap: 0.35rem; }
+.big { font: 800 var(--step-3)/1 var(--display); font-variant-numeric: tabular-nums; }
+
+/* next */
+.next { display: grid; gap: 0; margin-top: 1.5rem; border-top: 1px solid var(--line); }
+.next li { list-style: none; display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
+.next ol { padding: 0; margin: 0; }
+.status { font: 500 0.72rem/1.6 var(--mono); text-transform: uppercase; letter-spacing: 0.08em; }
+.status.open { color: var(--due); }
+.status.done { color: var(--accent); }
+
+footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .hero, .matrix-wrap { grid-template-columns: minmax(0, 1fr); }
+  section.block { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding-block: 3.5rem 0; }
+  .figures { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .figures div:nth-child(4) { border-left: 0; }
+  .figures div:nth-child(n+4) { border-top: 1px solid var(--line); }
+  .arch, .quality { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .decisions { grid-template-columns: minmax(0, 1fr); }
+  .decision, .decision:nth-child(even) { padding: 1.25rem 0; border-left: 0; }
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .figures div:nth-child(n) { border-left: 0; border-top: 1px solid var(--line); }
+  .figures div:nth-child(even) { border-left: 1px solid var(--line); }
+  .figures div:first-child, .figures div:nth-child(2) { border-top: 0; }
+  .figures div:last-child { grid-column: 1 / -1; border-left: 0; }
+  .next li { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }
+  .meta { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-block: 2.5rem 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="eyebrow">Case study · Full-stack</span>
+    <nav aria-label="Sections">
+      <a href="#courses">Courses</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#review">Review</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#quality">Quality</a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Recursion</p>
+      <h1 style="margin-top:0.9rem">One set of words, <em>90 courses</em>, ten scripts.</h1>
+      <p class="lede">A Duolingo-style language app for learners across Southeast Asia and beyond. Short lessons, instant feedback, and a spaced-repetition scheduler that brings each word back just before you forget it.</p>
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Solo developer, design to deploy</dd></div>
+        <div><dt>Stack</dt><dd>React · Express · MongoDB</dd></div>
+        <div><dt>Scope</dt><dd>8-week plan, weeks 1–5 shipped</dd></div>
+        <div><dt>Tests</dt><dd>218 passing, server and client</dd></div>
+      </dl>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/Aung422001/Recursion" target="_blank" rel="noopener">View the code</a>
+        <span class="btn" aria-disabled="true" title="Deployment is week 8 of the plan">Live demo coming soon</span>
+      </div>
+    </div>
+
+    <figure class="specimen" aria-label="A lesson question, cycling through the ten languages" style="margin:0">
+      <div class="row">
+        <span class="chip" id="hero-course">English → Burmese</span>
+        <span class="eyebrow">3 / 5</span>
+      </div>
+      <div class="bar"><i></i></div>
+      <p class="eyebrow">What does this mean?</p>
+      <p class="word" id="hero-word" lang="my">မင်္ဂလာပါ</p>
+      <p class="roman" id="hero-roman">mingalaba</p>
+      <div class="options" aria-hidden="true">
+        <span>thank you</span>
+        <span class="right">hello</span>
+        <span>good night</span>
+        <span>sorry</span>
+      </div>
+    </figure>
+  </div>
+
+  <div class="figures" role="list">
+    <div role="listitem"><b>10</b><span>languages, 6 non-Latin scripts</span></div>
+    <div role="listitem"><b>90</b><span>course pairs, both directions</span></div>
+    <div role="listitem"><b>800</b><span>translations from 80 concepts</span></div>
+    <div role="listitem"><b>398</b><span>letters with sounds and examples</span></div>
+    <div role="listitem"><b>218</b><span>automated tests</span></div>
+  </div>
+
+  <!-- ================= BRIEF ================= -->
+  <section class="block" id="brief">
+    <p class="eyebrow">The brief</p>
+    <div class="prose">
+      <h2>It started as English ↔ Burmese.</h2>
+      <p>The plan was a single course: an English↔Myanmar learning app to show full-stack ability for junior developer roles across Southeast Asia. Multiple language pairs were explicitly out of scope for v1.</p>
+      <p>Halfway through, that changed on purpose. The people I wanted to reach speak Thai, Vietnamese, Malay, Hindi and Arabic as often as English, and a second pair would have exposed every assumption the first one hid. So I generalised the whole model: ten languages, every ordered pair, and each language's writing system taught as content.</p>
+      <p class="muted">The hard part was never adding languages. It was making ten scripts, two writing directions and ninety courses cost the same to maintain as one.</p>
+    </div>
+  </section>
+
+  <!-- ================= COURSES ================= -->
+  <section class="block" id="courses">
+    <p class="eyebrow">Course matrix</p>
+    <div class="prose">
+      <h2>Ten languages make ninety courses.</h2>
+      <p>Writing "thank you" ninety times, and fixing it ninety times, does not scale. Each <strong>concept</strong> holds one meaning in all ten languages, and a course is that set read through two language codes. An eleventh language is one more key per concept, and it opens twenty new courses at once.</p>
+    </div>
+
+    <div class="matrix-wrap full">
+      <div>
+        <div class="matrix-scroll">
+          <table class="matrix" aria-describedby="matrix-hint">
+            <thead id="matrix-head"></thead>
+            <tbody id="matrix-body"></tbody>
+          </table>
+        </div>
+        <div class="legend" id="matrix-hint">
+          <span><i style="background:var(--accent)"></i>Both sides typeable</span>
+          <span><i style="background:color-mix(in srgb, var(--accent) 45%, var(--accent-soft))"></i>Typed in the Latin side</span>
+          <span><i style="background:var(--accent-soft)"></i>No typing, choice and matching only</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-top:0.6rem">Rows: the language you know. Columns: the language you learn. Pick any square.</p>
+      </div>
+
+      <article class="course-card" aria-live="polite">
+        <p class="eyebrow" id="cc-slug">course · en-th</p>
+        <h3 id="cc-title">Thai from English</h3>
+        <div class="pair">
+          <div class="side"><span class="eyebrow" id="cc-src-name">English</span><span class="script" id="cc-src-word">thank you</span></div>
+          <span class="arrow">→</span>
+          <div class="side"><span class="eyebrow" id="cc-tgt-name">Thai</span><span class="script" id="cc-tgt-word" lang="th">ขอบคุณ</span><span class="roman" id="cc-tgt-roman">khop khun</span></div>
+        </div>
+        <dl class="kv">
+          <dt>Script</dt><dd id="cc-script">latin → thai</dd>
+          <dt>Direction</dt><dd id="cc-dir">left to right</dd>
+          <dt>Typed answers</dt><dd id="cc-typed">in English</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= DECISIONS ================= -->
+  <section class="block" id="decisions">
+    <p class="eyebrow">Decisions</p>
+    <div class="prose">
+      <h2>Choices that shaped the build</h2>
+      <p class="muted">Each of these came from a concrete problem, and each is covered by tests.</p>
+    </div>
+    <div class="decisions full">
+      <div class="decision">
+        <span class="tag">Content</span>
+        <h3>Exercises are generated, not stored</h3>
+        <p>Lessons are built on request from a PRNG seeded on lesson, source and target. Storing them would mean 1,440 near-identical documents. Because generation is deterministic, the server can rebuild a lesson to grade an answer without remembering what it sent.</p>
+      </div>
+      <div class="decision">
+        <span class="tag">Integrity</span>
+        <h3>The server grades every answer</h3>
+        <p>Lessons reach the browser with <code>correctAnswer</code> stripped, so answers never appear in the page source. Every graded answer is also the natural moment to update the review schedule.</p>
+      </div>
+      <div class="decision">
+        <span class="tag">Learning</span>
+        <h3>Progress belongs to the language</h3>
+        <p>Knowing <span class="script" lang="ja">こんにちは</span> is the same knowledge whether you reached Japanese from English or from Malay. The schedule is keyed on concept and language; lesson completions stay per course.</p>
+      </div>
+      <div class="decision">
+        <span class="tag">Input</span>
+        <h3>Only ask for typing someone can do</h3>
+        <p>Few laptops have a Burmese keyboard. Typed answers flip to whichever side uses a Latin script, and when neither does (Thai from Japanese) the lesson leans on multiple choice and matching instead.</p>
+      </div>
+      <div class="decision">
+        <span class="tag">Scripts</span>
+        <h3>Every script declared, every font chosen</h3>
+        <p>Each language carries its script, writing direction and romanization needs. Without the right font and <code>dir</code>, Burmese and Thai render as boxes and Arabic runs backwards. No flag emoji: Windows has no glyphs for them, and a language is not a country.</p>
+      </div>
+      <div class="decision">
+        <span class="tag">Time</span>
+        <h3>Streaks roll over at your midnight</h3>
+        <p>Someone studying at 11pm in Yangon should not lose a streak to a server clock. The client reports its UTC offset, and read paths zero out a streak that has already expired so the dashboard never shows one you have lost.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SM-2 ================= -->
+  <section class="block" id="review">
+    <p class="eyebrow">Spaced repetition</p>
+    <div class="prose">
+      <h2>A missed word comes back in ten minutes, not tomorrow.</h2>
+      <p>Review runs on SM-2, written as a pure function with an injectable clock so every edge case is tested without a database. Textbook SM-2 sends a failed item to a one-day interval. Losing a word and not seeing it for a day is how learners forget it, so a lapse schedules a retry in the same sitting and resets the ladder.</p>
+    </div>
+    <figure class="chart-card full" style="margin-inline:0">
+      <figcaption class="eyebrow" style="margin-bottom:1rem">Days until the next review, answering "good" each time (ease factor 2.5)</figcaption>
+      <div class="chart-scroll">
+        <svg viewBox="0 0 640 250" role="img" aria-labelledby="sm2-desc">
+          <desc id="sm2-desc">Review intervals: 1, 6, 15, 38 and 95 days on successive correct answers. A wrong answer resets the item and brings it back after 10 minutes.</desc>
+          <!-- y scale: 0–100 days over 180px (y=200 is 0) -->
+          <g>
+            <line class="grid" x1="70" x2="630" y1="200" y2="200"/>
+            <line class="grid" x1="70" x2="630" y1="155" y2="155" stroke-dasharray="3 4"/>
+            <line class="grid" x1="70" x2="630" y1="110" y2="110" stroke-dasharray="3 4"/>
+            <line class="grid" x1="70" x2="630" y1="65" y2="65" stroke-dasharray="3 4"/>
+            <line class="grid" x1="70" x2="630" y1="20" y2="20" stroke-dasharray="3 4"/>
+            <text x="60" y="204" text-anchor="end">0</text>
+            <text x="60" y="159" text-anchor="end">25</text>
+            <text x="60" y="114" text-anchor="end">50</text>
+            <text x="60" y="69" text-anchor="end">75</text>
+            <text x="60" y="24" text-anchor="end">100</text>
+          </g>
+          <!-- lapse -->
+          <rect class="barlapse" x="90" y="197" width="56" height="3" rx="1.5"/>
+          <text class="val" x="118" y="188" text-anchor="middle">10 min</text>
+          <text x="118" y="222" text-anchor="middle">miss</text>
+          <!-- reps: width 56, step 92 -->
+          <rect class="barok" x="182" y="198.2" width="56" height="1.8" rx="1"/>
+          <text class="val" x="210" y="188" text-anchor="middle">1 d</text>
+          <text x="210" y="222" text-anchor="middle">1st</text>
+          <rect class="barok" x="274" y="189.2" width="56" height="10.8" rx="2"/>
+          <text class="val" x="302" y="180" text-anchor="middle">6 d</text>
+          <text x="302" y="222" text-anchor="middle">2nd</text>
+          <rect class="barok" x="366" y="173" width="56" height="27" rx="3"/>
+          <text class="val" x="394" y="164" text-anchor="middle">15 d</text>
+          <text x="394" y="222" text-anchor="middle">3rd</text>
+          <rect class="barok" x="458" y="131.6" width="56" height="68.4" rx="3"/>
+          <text class="val" x="486" y="122" text-anchor="middle">38 d</text>
+          <text x="486" y="222" text-anchor="middle">4th</text>
+          <rect class="barok" x="550" y="29" width="56" height="171" rx="3"/>
+          <text class="val" x="578" y="20" text-anchor="middle">95 d</text>
+          <text x="578" y="222" text-anchor="middle">5th</text>
+          <text x="350" y="244" text-anchor="middle">correct answers in a row</text>
+        </svg>
+      </div>
+      <div class="chart-note">
+        <span><b style="color:var(--due)">■</b> A miss resets repetitions and returns in 10 minutes</span>
+        <span><b style="color:var(--accent)">■</b> Ease moves on every review, with a floor of 1.3</span>
+        <span>Quality is inferred from tries and hints, so learners never rate themselves</span>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ================= ARCHITECTURE ================= -->
+  <section class="block" id="architecture">
+    <p class="eyebrow">Architecture</p>
+    <div class="prose">
+      <h2>An npm-workspaces monorepo in three parts</h2>
+      <p>Client and server share one dependency-free constants module: the language catalogue, exercise types, SM-2 grades and XP values. The browser shows the same numbers the server will award.</p>
+    </div>
+    <div class="arch full">
+      <div class="tier">
+        <span class="eyebrow">client/</span>
+        <h3>React SPA</h3>
+        <ul>
+          <li>Vite, Tailwind, React Router</li>
+          <li>Lesson player: <code>MultipleChoice</code>, <code>FillBlank</code>, <code>MatchPairs</code></li>
+          <li>Unit map, review queue, script drills, dashboard</li>
+          <li>Audio via <code>speechSynthesis</code>, server fallback</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <span class="eyebrow">server/</span>
+        <h3>Express API</h3>
+        <ul>
+          <li>23 endpoints under <code>/api</code></li>
+          <li>Services: <code>sm2</code>, <code>exercise</code>, <code>grading</code>, <code>streak</code>, <code>tts</code></li>
+          <li>Zod on every body and query string</li>
+          <li>Idempotent seed from JSON content files</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <span class="eyebrow">MongoDB</span>
+        <h3>Mongoose models</h3>
+        <ul>
+          <li><code>Concept</code>: one meaning, ten translations</li>
+          <li><code>Unit</code> → <code>Lesson</code>: language-neutral templates</li>
+          <li><code>UserProgress</code>: SM-2 state per concept and language</li>
+          <li><code>Alphabet</code>, <code>LessonCompletion</code>, <code>User</code></li>
+        </ul>
+      </div>
+    </div>
+    <div class="full">
+      <p class="eyebrow" style="margin-top:2rem">Auth flow</p>
+      <div class="flow">register / login ─→ access token   15 min, held in memory only
+                 └→ refresh token  30 days, httpOnly cookie
+
+any 401 ─→ one shared POST /api/auth/refresh ─→ retry the original request
+logout everywhere ─→ bump refreshTokenVersion, no blocklist needed</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin-top:0.75rem;max-width:var(--col)">Concurrent requests share a single in-flight refresh instead of racing, so a token expiring mid-lesson is invisible to the learner.</p>
+    </div>
+  </section>
+
+  <!-- ================= QUALITY ================= -->
+  <section class="block" id="quality">
+    <p class="eyebrow">Quality</p>
+    <div class="prose">
+      <h2>Tested like it has users</h2>
+    </div>
+    <div class="quality full">
+      <div>
+        <span class="big">163</span>
+        <h3>Server tests</h3>
+        <ul>
+          <li>Vitest and Supertest against a throwaway database</li>
+          <li>SM-2 and streaks as pure functions: lapses, ease floors, timezone edges</li>
+          <li>TTS tests stub <code>fetch</code>, so the suite never hits the network</li>
+        </ul>
+      </div>
+      <div>
+        <span class="big">55</span>
+        <h3>Client tests</h3>
+        <ul>
+          <li>React Testing Library on the lesson player</li>
+          <li>Auth flows, including the silent refresh</li>
+          <li>Each exercise type, right and wrong answers</li>
+        </ul>
+      </div>
+      <div>
+        <span class="big">20</span>
+        <h3>Login tries / 15 min</h3>
+        <ul>
+          <li>bcrypt at 12 rounds, one error for wrong password or unknown email</li>
+          <li>Helmet, CORS pinned to the client origin</li>
+          <li>TTS proxy behind auth, capped at 200 characters and rate limited</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEXT ================= -->
+  <section class="block" id="next">
+    <p class="eyebrow">What's next</p>
+    <div class="prose">
+      <h2>Known gaps, stated plainly</h2>
+      <ol class="next">
+        <li><span class="status done">Shipped</span><span>Monorepo, auth, data model, lesson flow, SM-2 review, streaks, XP and dashboard across all 90 courses.</span></li>
+        <li><span class="status open">Week 8</span><span>Deploy the server and client, with MongoDB Atlas in production, and link a live demo here.</span></li>
+        <li><span class="status open">Content</span><span>A native-speaker pass on every language. Politeness in Japanese and Korean verbs and gendered forms in Arabic are where the demo vocabulary is most likely to be off.</span></li>
+        <li><span class="status open">Interface</span><span>The UI and unit titles are English only. A learner studying Thai from Japanese still reads English buttons.</span></li>
+        <li><span class="status open">Audio</span><span>The default voice uses an unofficial endpoint. Production should point <code>TTS_PROVIDER</code> at a paid service, which is a single case in one switch.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <span>Recursion · built by @Aung422001</span>
+    <a href="https://github.com/Aung422001/Recursion" target="_blank" rel="noopener">github.com/Aung422001/Recursion</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Mirrors shared/constants.js LANGUAGES, plus "hello" and "thank you" from the seed content.
+  var L = [
+    { c: 'en', n: 'English',    s: 'latin',      d: 'ltr', t: true,  hi: ['hello'],              ty: ['thank you'] },
+    { c: 'my', n: 'Burmese',    s: 'myanmar',    d: 'ltr', t: false, hi: ['မင်္ဂလာပါ', 'mingalaba'], ty: ['ကျေးဇူးတင်ပါတယ်', 'kyeizu tin ba de'] },
+    { c: 'th', n: 'Thai',       s: 'thai',       d: 'ltr', t: false, hi: ['สวัสดี', 'sawatdi'],      ty: ['ขอบคุณ', 'khop khun'] },
+    { c: 'ja', n: 'Japanese',   s: 'japanese',   d: 'ltr', t: false, hi: ['こんにちは', 'konnichiwa'], ty: ['ありがとう', 'arigatou'] },
+    { c: 'ko', n: 'Korean',     s: 'korean',     d: 'ltr', t: false, hi: ['안녕하세요', 'annyeonghaseyo'], ty: ['감사합니다', 'gamsahamnida'] },
+    { c: 'vi', n: 'Vietnamese', s: 'latin',      d: 'ltr', t: true,  hi: ['xin chào'],           ty: ['cảm ơn'] },
+    { c: 'id', n: 'Indonesian', s: 'latin',      d: 'ltr', t: true,  hi: ['halo'],               ty: ['terima kasih'] },
+    { c: 'ms', n: 'Malay',      s: 'latin',      d: 'ltr', t: true,  hi: ['helo'],               ty: ['terima kasih'] },
+    { c: 'hi', n: 'Hindi',      s: 'devanagari', d: 'ltr', t: false, hi: ['नमस्ते', 'namaste'],      ty: ['धन्यवाद', 'dhanyavaad'] },
+    { c: 'ar', n: 'Arabic',     s: 'arabic',     d: 'rtl', t: false, hi: ['مرحبا', 'marhaban'],      ty: ['شكرا', 'shukran'] }
+  ];
+  var $ = function (id) { return document.getElementById(id); };
+
+  // ---- hero: cycle "hello" through every non-English language ----
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cycle = L.filter(function (l) { return l.c !== 'en'; });
+  var i = 0;
+  var bar = document.querySelector('.specimen .bar i');
+  function showHello() {
+    var l = cycle[i % cycle.length];
+    var w = $('hero-word');
+    w.textContent = l.hi[0];
+    w.setAttribute('lang', l.c);
+    w.setAttribute('dir', l.d);
+    $('hero-roman').textContent = l.hi[1] || ' ';
+    $('hero-course').textContent = 'English → ' + l.n;
+    bar.style.width = (20 + (i % 5) * 20) + '%';
+    i++;
+  }
+  showHello();
+  if (!reduce) setInterval(showHello, 2400);
+
+  // ---- course matrix ----
+  function typedIn(src, tgt) {
+    if (src.t && tgt.t) return { cls: 'latin', txt: 'in ' + tgt.n + ', or either side' };
+    if (src.t) return { cls: 'mixed', txt: 'in ' + src.n + ' (the Latin side)' };
+    if (tgt.t) return { cls: 'mixed', txt: 'in ' + tgt.n + ' (the Latin side)' };
+    return { cls: '', txt: 'skipped: multiple choice and matching only' };
+  }
+  var head = '<tr><th scope="col"><span class="eyebrow" style="font-size:0.6rem">from ↓ learn →</span></th>';
+  L.forEach(function (l) { head += '<th scope="col" title="' + l.n + '">' + l.c + '</th>'; });
+  $('matrix-head').innerHTML = head + '</tr>';
+
+  var body = '';
+  L.forEach(function (src, r) {
+    body += '<tr><th scope="row" title="' + src.n + '">' + src.c + '</th>';
+    L.forEach(function (tgt, c) {
+      if (r === c) { body += '<td class="self"><span aria-hidden="true"></span></td>'; return; }
+      var t = typedIn(src, tgt);
+      body += '<td><button type="button" id="m-' + src.c + '-' + tgt.c + '" class="' + t.cls +
+        '" data-s="' + r + '" data-t="' + c + '" aria-pressed="false" aria-label="' + tgt.n + ' from ' + src.n + '">' +
+        src.c + '-' + tgt.c + '</button></td>';
+    });
+    body += '</tr>';
+  });
+  $('matrix-body').innerHTML = body;
+
+  var current = null;
+  function select(btn) {
+    if (current) current.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-pressed', 'true');
+    current = btn;
+    var src = L[+btn.dataset.s], tgt = L[+btn.dataset.t];
+    $('cc-slug').textContent = 'course · ' + src.c + '-' + tgt.c;
+    $('cc-title').textContent = tgt.n + ' from ' + src.n;
+    $('cc-src-name').textContent = src.n;
+    $('cc-tgt-name').textContent = tgt.n;
+    var sw = $('cc-src-word'), tw = $('cc-tgt-word');
+    sw.textContent = src.ty[0]; sw.setAttribute('lang', src.c); sw.setAttribute('dir', src.d);
+    tw.textContent = tgt.ty[0]; tw.setAttribute('lang', tgt.c); tw.setAttribute('dir', tgt.d);
+    $('cc-tgt-roman').textContent = tgt.ty[1] || '';
+    $('cc-script').textContent = src.s + ' → ' + tgt.s;
+    $('cc-dir').textContent = tgt.d === 'rtl' ? 'right to left (Arabic sets dir="rtl")' : 'left to right';
+    $('cc-typed').textContent = typedIn(src, tgt).txt;
+  }
+  $('matrix-body').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (b) select(b);
+  });
+  $('matrix-body').addEventListener('mouseover', function (e) {
+    var b = e.target.closest('button'); if (b) select(b);
+  });
+  select($('m-en-th'));
+})();
+</script>
+</body>
+</html>
